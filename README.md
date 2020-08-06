@@ -15,5 +15,11 @@ JAVAGOSU
     - 자바설치 & 윈도우 실행키로 컴파일하는 법 javac.XXX.java > java XXX
     - \\172.16.146.1 공유파일접근
     - :d 에 kbs파일
-    - main, sysout >> ctrl + space >> 
-    - 
+    
+    -변수
+      -기본자료형
+        - main, sysout >> ctrl + space >> 
+        - boolean true false
+        - 정수형 byte, short, int, long
+        - 실수형 float, double
+        - int 선언 >> int라는 선언에 계속 대입할 수 있음 
