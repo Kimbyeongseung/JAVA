@@ -1,73 +1,27 @@
-import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		String input = "";
-		int kor = 100;
-		int eng = 100;
-		int math = 100;
-		int sci = 100;
-		boolean isExit = false;
-
-		// 1회
-		System.out.println("과목 입력");
-		input = scan.nextLine();
-		if (input.equals("국어")) {
-			System.out.println("현재 국어 점수: " + kor);
-			System.out.println("변경할 점수를 입력해 주세요");
-			kor = Integer.parseInt(scan.nextLine());
-		} else if (input.equals("영어")) {
-			System.out.println("현재 영어 점수: " + eng);
-			System.out.println("변경할 점수를 입력해 주세요");
-			eng = Integer.parseInt(scan.nextLine());
-		} else if (input.equals("exit")) {
-			isExit = true;
-		}
-
-		// 총점과 평균 보여주기
-		System.out.println("총점: " + (kor + eng) + " 점");
-
-		if (isExit == false) {
-			// 2회
-			System.out.println("과목 입력");
-			input = scan.nextLine();
-			if (input.equals("국어")) {
-				System.out.println("현재 국어 점수: " + kor);
-				System.out.println("변경할 점수를 입력해 주세요");
-				kor = Integer.parseInt(scan.nextLine());
-			} else if (input.equals("영어")) {
-				System.out.println("현재 영어 점수: " + eng);
-				System.out.println("변경할 점수를 입력해 주세요");
-				eng = Integer.parseInt(scan.nextLine());
-			} else if (input.equals("exit")) {
-				isExit = true;
-			}
-
-			// 총점과 평균 보여주기
-			System.out.println("총점: " + (kor + eng) + " 점");
-		}
-
-		if (isExit == false) {
-			// 3회
-			System.out.println("과목 입력");
-			input = scan.nextLine();
-			if (input.equals("국어")) {
-				System.out.println("현재 국어 점수: " + kor);
-				System.out.println("변경할 점수를 입력해 주세요");
-				kor = Integer.parseInt(scan.nextLine());
-			} else if (input.equals("영어")) {
-				System.out.println("현재 영어 점수: " + eng);
-				System.out.println("변경할 점수를 입력해 주세요");
-				eng = Integer.parseInt(scan.nextLine());
-			} else if (input.equals("exit")) {
-				isExit = true;
-			}
-
-			// 총점과 평균 보여주기
-			System.out.println("총점: " + (kor + eng) + " 점");
-		}
+		String str = " 동해물과 동두산이 동";
+		System.out.println(str);
+		System.out.println(str.length());//문자열 길이
+		str = str.trim();//문자열 앞뒤 공백 제거
+		System.out.println(str);
+		
+		int idx = str.indexOf("동");//'동'의 위치 앞에서부터 검색
+		idx = str.lastIndexOf("동");//'동'의 위치 뒤에서부터 검색
+		System.out.println(idx);
+		
+		System.out.println(str.charAt(7));//특정위치의 문자
+		
+		str = "가나다라마";
+//		str = str.substring(2);//글자짜르기
+//		System.out.println(str);
+		str=str.substring(2,4);//글자짜르기
+		System.out.println(str);
+		
+		str=str.replace("라", "개똥이");//글자 바꾸기
+		System.out.println(str);
 	}
 
 }
