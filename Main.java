@@ -8,28 +8,66 @@ public class Main {
 		int kor = 100;
 		int eng = 100;
 		int math = 100;
-		int sci =100;
-		
+		int sci = 100;
+		boolean isExit = false;
+
+		// 1회
 		System.out.println("과목 입력");
 		input = scan.nextLine();
-		
-		if(input.equals("국어")) {
-			//현재 국어 점수를 보여줌
-			//새로운 국어 점수를 입력 받음
-			// kor 변수에 새로 입력 받은 점수를 넣어줌		
-		}else if(input.equals("영어")) {
-			//현재 영어 점수를 보여줌
-			//새로운 영어 점수를 입력 받음
-			// eng 변수에 새로 입력 받은 점수를 넣어줌
+		if (input.equals("국어")) {
+			System.out.println("현재 국어 점수: " + kor);
+			System.out.println("변경할 점수를 입력해 주세요");
+			kor = Integer.parseInt(scan.nextLine());
+		} else if (input.equals("영어")) {
+			System.out.println("현재 영어 점수: " + eng);
+			System.out.println("변경할 점수를 입력해 주세요");
+			eng = Integer.parseInt(scan.nextLine());
+		} else if (input.equals("exit")) {
+			isExit = true;
 		}
 
-		
-		
-		
-		//총점과 평균 보여주기
-		
-		
+		// 총점과 평균 보여주기
+		System.out.println("총점: " + (kor + eng) + " 점");
 
+		if (isExit == false) {
+			// 2회
+			System.out.println("과목 입력");
+			input = scan.nextLine();
+			if (input.equals("국어")) {
+				System.out.println("현재 국어 점수: " + kor);
+				System.out.println("변경할 점수를 입력해 주세요");
+				kor = Integer.parseInt(scan.nextLine());
+			} else if (input.equals("영어")) {
+				System.out.println("현재 영어 점수: " + eng);
+				System.out.println("변경할 점수를 입력해 주세요");
+				eng = Integer.parseInt(scan.nextLine());
+			} else if (input.equals("exit")) {
+				isExit = true;
+			}
+
+			// 총점과 평균 보여주기
+			System.out.println("총점: " + (kor + eng) + " 점");
+		}
+
+		if (isExit == false) {
+			// 3회
+			System.out.println("과목 입력");
+			input = scan.nextLine();
+			if (input.equals("국어")) {
+				System.out.println("현재 국어 점수: " + kor);
+				System.out.println("변경할 점수를 입력해 주세요");
+				kor = Integer.parseInt(scan.nextLine());
+			} else if (input.equals("영어")) {
+				System.out.println("현재 영어 점수: " + eng);
+				System.out.println("변경할 점수를 입력해 주세요");
+				eng = Integer.parseInt(scan.nextLine());
+			} else if (input.equals("exit")) {
+				isExit = true;
+			}
+
+			// 총점과 평균 보여주기
+			System.out.println("총점: " + (kor + eng) + " 점");
+		}
 	}
 
 }
