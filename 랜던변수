@@ -1,0 +1,25 @@
+
+import java.util.Random;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+
+
+		Random rd = new Random();
+//		String []arr = {"바보1","바보1","바보1","바보1","바보1"};
+		String []arr = new String[5];
+		arr[0] = "바보1";
+		arr[1] = "바보2";
+		arr[2] = "바보3";
+		arr[3] = "바보4";
+		arr[4] = "바보5";
+		int ranNum = rd.nextInt(arr.length);
+		System.out.println("arr["+ranNum+"]:" + arr[ranNum]);
+		
+		System.out.println(ranNum);
+		
+		
+	}
+
+}
