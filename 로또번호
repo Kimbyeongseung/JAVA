@@ -1,0 +1,27 @@
+import java.util.Random;
+
+public class Main7 {
+
+	public static void main(String[] args) {
+		
+		Random rd = new Random();
+		int []lotto = new int[6];
+		boolean []isSel = new boolean[45];
+		for (int i = 0; i< lotto.length; i++) {
+			int ranNum = rd.nextInt(45)+1;
+			if (isSel[ranNum]== false) {
+				isSel[ranNum] = true;
+				lotto[i] = ranNum;
+				
+				System.out.println(ranNum);
+				
+			}else {
+				i--;
+			}
+		
+		}
+		
+		
+		
+	}
+}
