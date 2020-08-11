@@ -16,6 +16,7 @@ public class Main {
 		strArr.add(1,"마");//add , 현재 인덱스 특정 값이 있으면 뒤로 밀고 넣는다.
 		strArr.add(0,"바보");//0번 위치의 값을 변경한다
 		strArr.remove(3);//3번 위치의 단어 삭제 
+		strArr.get(3);//3번 단어의 정보 검색 
 		//strArr.clear();//삭제
 		System.out.println("size:" + strArr.size());
 		//System.out.println(strArr.get(0));
