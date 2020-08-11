@@ -23,5 +23,11 @@ JAVAGOSU
         - 실수형 float, double
         - int 선언 >> int라는 선언에 계속 대입할 수 있음 
         
+   ### 20.08.10 (월)
+   -배열 ,랜덤함수, 반복문 (For, Whlie, Do_While
+    -
+        
+   ### 20.08.11 (화)
+   -
         
   
