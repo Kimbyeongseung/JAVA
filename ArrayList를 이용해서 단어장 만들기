@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main2 {
+////단어장만들기
+	public static void main(String[] args) {
+		ArrayList<String> strArr = new ArrayList<>();
+		Scanner scan = new Scanner(System.in);
+		
+		String str;
+		String a;
+		String b;
+		String c;
+		String d;
+		String temp;
+		
+		strArr.add("가");
+		strArr.add("나");
+		strArr.add("다");
+		strArr.add("라");
+		strArr.add("마");
+		strArr.add("바");
+		strArr.add("사");
+		
+		strArr.add("사");
+		strArr.add("사");
+		strArr.add("사");
+		strArr.add("사");
+		
+		System.out.println("무엇을 하시겠습니까?");
+		System.out.print("1: 단어추가");
+		
+		
+//		System.out.print("2: 단어삭제");
+//		System.out.print("3: 단어수정");
+//		System.out.print("4: 단어검색");
+		
+		str = scan.nextLine();
+		
+		if(str.equals("1")) { 
+			System.out.println("추가할 단어를 입력하세요.");
+			str = scan.nextLine();
+			strArr.add(str);
+			System.out.println(str + "가 추가 되었습니다.");
+		}else if (str.equals("2")) {
+			System.out.println("삭제할 단어를 입력하세요.");
+			str = scan.nextLine();
+//			strArr.remove(**인덱스 넣기**);//index = int 값
+			System.out.println(str + "가 삭제되었습니다.");
+			
+		}else if (str.equals("3")) {
+			
+		}
+			
+		}
+		
+		
+		
+			
+			
+			
+			
+		
+	
+		
+	}
+
+
