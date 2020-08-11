@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ArrayList<String> strArr = new ArrayList<>();
+		ArrayList<Integer> intArr = new ArrayList<>();
+		ArrayList<Boolean> booleanArr = new ArrayList<>();
+		ArrayList<Float> floatArr = new ArrayList<>();
+		
+		
+		strArr.add("가");
+		strArr.add("나");
+		strArr.add("다");
+		strArr.add("라");
+		strArr.add(1,"마");//add , 현재 인덱스 특정 값이 있으면 뒤로 밀고 넣는다.
+		strArr.add(0,"바보");//0번 위치의 값을 변경한다
+		strArr.remove(3);//3번 위치의 단어 삭제 
+		//strArr.clear();//삭제
+		System.out.println("size:" + strArr.size());
+		//System.out.println(strArr.get(0));
+		
+		System.out.println("마의 위치: "+strArr.indexOf("마"));
+		System.out.println("size:" + strArr.size());//어레이 리스트의 길이
+		for(int i=0; i<strArr.size();i++) {
+			System.out.println(strArr.get(i));
+		}
+	}
+
+}
