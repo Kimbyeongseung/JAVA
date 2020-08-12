@@ -29,7 +29,12 @@ JAVAGOSU
         
    ### 20.08.11 (화)
   
-   -ArrayList를 이용해서 단어장 만들기 
+   -ArrayList를 이용해서 단어장 만들기
+   
+   ### 20.08.12 (수)
+   -ArrayList를 이용해서 단어장 만들고 게임만들기
+   -switch-case 문, 달력만들기
+   
    
         
   
