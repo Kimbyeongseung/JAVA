@@ -4,16 +4,24 @@ import java.util.Scanner;
 public class Main2 {
 ////단어장만들기
 	public static void main(String[] args) {
-		ArrayList<String> strArr = new ArrayList<>();
-		Scanner scan = new Scanner(System.in);
 		
+		
+		
+		String[] menu = new String[5];//배열
+		
+		
+		ArrayList<String> strArr = new ArrayList<>(); //어레이리스트
+		
+		ArrayList<String> menu_bar =new ArrayList<>();
+		
+		
+		Scanner sc = new Scanner(System.in);
+
 		String str;
-		String a;
-		String b;
-		String c;
-		String d;
-		String temp;
 		
+		
+		int menuNum=1;
+
 		strArr.add("가");
 		strArr.add("나");
 		strArr.add("다");
@@ -21,48 +29,165 @@ public class Main2 {
 		strArr.add("마");
 		strArr.add("바");
 		strArr.add("사");
-		
-		strArr.add("사");
-		strArr.add("사");
-		strArr.add("사");
-		strArr.add("사");
-		
-		System.out.println("무엇을 하시겠습니까?");
-		System.out.print("1: 단어추가");
-		
-		
-//		System.out.print("2: 단어삭제");
-//		System.out.print("3: 단어수정");
-//		System.out.print("4: 단어검색");
-		
-		str = scan.nextLine();
-		
-		if(str.equals("1")) { 
-			System.out.println("추가할 단어를 입력하세요.");
-			str = scan.nextLine();
-			strArr.add(str);
-			System.out.println(str + "가 추가 되었습니다.");
-		}else if (str.equals("2")) {
-			System.out.println("삭제할 단어를 입력하세요.");
-			str = scan.nextLine();
-//			strArr.remove(**인덱스 넣기**);//index = int 값
-			System.out.println(str + "가 삭제되었습니다.");
+
+		menu_bar.add("단어추가");
+		menu_bar.add("단어삭제") ;
+		menu_bar.add("단어수정");
+		menu_bar.add("단어검색");
+		menu_bar.add("종료");
+
+		while (true) {
+			System.out.println("무엇을 하시겠습니까?");
+
+			System.out.println(strArr);
+
+			System.out.print("("+menuNum+") " + menu_bar.get(0) +"   ("+(menuNum+1)+") " + menu_bar.get(1) +"   ("+(menuNum+2)+") " + menu_bar.get(2) +"   ("+(menuNum+3)+") " + menu_bar.get(3)  +"   ("+(menuNum+4)+") " + menu_bar.get(4));
 			
-		}else if (str.equals("3")) {
+			boolean temp2 = true;
 			
+			int menuLength = menu.length;
+			
+			str = sc.nextLine();
+			
+			for(int j=0; j< menu.length; j++) {
+			
+				if (str.equals(menu)) {
+				System.out.println();
+				temp2 = false;
+				break;
+			}	
+				else { 
+				System.out.println("오류입니다 다시 입력하세요");
+				}
+			
+			if (str.equals("1")) {
+				System.out.println("-----------------------------------------------------");
+				System.out.println("추가할 단어를 입력하세요.");
+				str = sc.nextLine();
+				strArr.add(str);
+				System.out.println(str + " 단어가 추가 되었습니다.");
+			}
+
+			else if (str.equals("2")) {
+
+				boolean tempflag = true;
+
+				System.out.println("삭제할 단어를 입력하세요.");
+				str = sc.nextLine();
+//				
+
+				int strLength = strArr.size();
+
+				for (int i = 0; i < strLength; i++) {
+
+					// 리스트 모두 탐색
+
+					if (strArr.get(i).equals(str)) {
+						// 단어가있는경우
+
+						System.out.println("단어를 찾았습니다. 삭제를 합니다.");
+
+						strArr.remove(i);
+						System.out.println("삭제완료");
+						tempflag=false;
+						
+						break;
+
+					}
+
+				}
+				
+				if(tempflag==true) {
+					
+					System.out.println("없어요 단어가");
+					
+				}
+				
+				
+
+//				선택에서 2번 누른상황
+//				
+//				여기부분  2번 누르고 삭제하는 부분이고
+//				
+//				여기안에서
+//				
+//				1. 실제로 단어가있는경우 
+//				
+//				2. 없는경우
+//				
+//				
+//				
+//				있다고 가정하고 지워버림
+//				
+//				
+			}
+
+			
+			
+			else if (str.equals("3")) {
+				
+				boolean tempflag2 = true;
+				
+				System.out.println("수정될 단어를 입력하세요.");
+				
+				int strlength = strArr.size();
+				
+				str = sc.nextLine();
+				
+				
+				for (int i =0; i < strlength; i++) {   	//배열의 개수 전체 체크
+					if (strArr.get(i).equals(str)) {	//쓴 것과 배열의 내용이 일치한다면? 
+						strArr.remove(i);			 	//i를 제거 
+							tempflag2 = false;
+							break;
+							}
+				}
+				
+				
+					System.out.println(str + "단어가 수정됩니다.");
+					System.out.println();
+					System.out.println("수정할 단어를 입력하세요.");
+					str = sc.nextLine();
+					
+					
+					//배열의 전체 개수 체크
+													//이건 단어를 추가해야되는거니까 
+					strArr.add(str);
+					
+//					else if {strArr.remove(str);
+//					str = sc.nextLine();
+//					strArr.add(str);
+//					System.out.println(str + "단어가 수정되었습니다.");
+//				} else {
+//					System.out.println("없는 단어입니다.");
+//				}
+//			} 
+			
+			
+			
+			
+//			if (str.equals("4")) {
+//				System.out.println("검색할 단어를 입력하세요.");
+//				str = sc.nextLine();
+//				if (str.equals(str)) {
+//					System.out.println(str);
+//					System.out.println(str + "가 검색되었습니다.");
+//				} else {
+//					System.out.println("없는 단어입니다.");
+//				}
+//			}
+//
+//			else if (str.equals("5")) {
+//				System.out.println("종료!");
+//				break;
+//
+//			}
+//
+//			else {
+//				System.out.println("없는 단어입니다.");
+			}
 		}
-			
-		}
-		
-		
-		
-			
-			
-			
-			
-		
+}
 	
-		
-	}
-
-
+}
+}
