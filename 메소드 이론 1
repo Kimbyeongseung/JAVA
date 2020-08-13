@@ -1,0 +1,25 @@
+
+public class Main { 
+
+	public static void main(String[] args) { //main 클래스 안에 main method가 있다
+		//1. static--정적함수   	4. args--인자
+		//2. void--반환값  
+		//3. print--메소드 이름    (메소드 ==함수)\
+		System.out.println("시작");
+		showName("소똥이",8000,"화룡의 둥지");
+		showName("개똥이", 3500,"말토리오 산맥");
+		showName("말똥이", 23,"한강 다리 밑에");
+		 //필요할때마다 꺼내 쓸 수 있음
+		 //파라메터로 받은 숫자 구구단으로 보여주는 메소드 
+		 //숫자 2개와 사칙연산 기호를 받아서 계산결과를 보여주는 메소드
+		System.out.println("끝");
+	}
+	static void showName(String str, int age, String address) { //메소드의 구분은 < 파라미터의 일치성 >
+		System.out.println("내이름은" +str +"입니다.");
+		System.out.println("사는 곳은 " + address + "입니다.");
+	}
+	
+	
+	
+	
+}
