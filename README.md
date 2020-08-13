@@ -35,6 +35,10 @@ JAVAGOSU
    -ArrayList를 이용해서 단어장 만들고 게임만들기
    -switch-case 문, 달력만들기
    
+   ### 20.08.13 (목)
+   -달력 만들기
+   -method의 정의
+   
    
         
   
