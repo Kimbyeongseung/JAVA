@@ -1,0 +1,97 @@
+import java.util.Scanner;
+
+public class Main2 {
+	
+	
+	
+	
+	static void gugudan(int i) {
+//		
+
+		
+		
+//		int A, B;
+//		
+//		A=i;
+//		B=j;
+		
+		
+		System.out.println("구구단 시작");
+		for (int j = 1; j < 10; j++) {
+			System.out.println(i+" X "+j+" = "+(i*j));
+		}
+
+		System.out.println("구구단 끝"); ///구구단 메소드
+		
+	}
+	
+	
+	static void cal () {
+		
+		
+		Scanner sc = new Scanner(System.in); //사칙연산 메소드
+		int a, b;
+		String str;
+		System.out.println("사칙연산 시작");
+		
+		
+	
+ 		
+		System.out.print("첫번째 숫자 : ");
+		a = Integer.parseInt(sc.nextLine());
+		System.out.print("두번째 숫자 : ");
+		b = Integer.parseInt(sc.nextLine());
+		System.out.print("기호를 입력해주세요.");
+		str = sc.nextLine();
+		
+		
+		/////////////
+		
+		
+		if (str.equals("+")) {
+			System.out.println(a + " + " + b + " = " + (a+b));
+		} else if (str.equals("-")) {
+			System.out.println(a + " - " + b + "=" +(a-b));
+		} else if (str.equals("*")) {
+			System.out.println(a + " * " + b + " = " + (a*b));
+		} else if (str.equals("/")) {
+			System.out.println(a + "/" + b + " = " + (a/b));
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+
+///////////////////////////////////////////////////		
+
+		
+		
+		System.out.print("숫자를 입력하세요.\n>>>");
+		
+		Scanner sc = new Scanner(System.in);
+		int Num=Integer.parseInt(sc.nextLine());
+		
+		gugudan(Num);
+		
+		
+		cal();
+		
+		
+		
+		//////////
+
+
+	}
+
+
+		
+		
+	
+	
+}
