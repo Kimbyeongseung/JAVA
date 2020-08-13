@@ -1,0 +1,102 @@
+import java.util.ArrayList;
+import java.util.Scanner; //1. 두 숫자를 받아서 더한 값을 리턴해주는 메소드
+							//2. int 배열 하나를 받아서 모든 숫자를 더하고 리턴해주는 메소드
+
+public class Main3 {
+//	static String holyShitFilter(String original) {
+//		String result = original;
+//		result = result.replace("바보", "**");
+//		result = result.replace("병맛", "**");
+//		result = result.replace("지랄", "**");
+//		
+//	}
+
+	
+
+//	static String StringEx(String temp) {
+//		Scanner sc = new Scanner(System.in);
+//		int a;
+//		int b;
+//		String result = temp;
+//		System.out.print("첫번째 숫자를 입력해주세요");
+//		a = Integer.parseInt(sc.nextLine());
+//		System.out.print("두번째 숫자를 입력해주세요");
+//		b = Integer.parseInt(sc.nextLine());
+//		System.out.println("-------------------------------------");
+//		System.out.println(a + " + " + b + "=" + (a+b));
+//		
+//		
+//		return "";
+//		
+//	}
+
+	
+
+	static int StringEx1(int a, int b) {
+		
+			int result=a+b;
+
+			return result;
+			
+			
+		}
+	
+	
+	static int StringEx2(int[] array) {
+		
+		
+		int result=0;
+
+		for(int i =0; i<array.length;i++) {
+			
+			result=result+array[i];
+			
+			
+		}
+		
+
+		return result;
+		
+		
+	}
+
+
+	public static void main(String[] args) {
+		
+//		String str = "바보야 너는 정말 병맛이야 지랄 좀 고만고만 해라";
+//		str = holyShitFilter(str);
+//		System.out.println(str); 
+		
+		
+		Scanner sc = new Scanner(System.in);
+		int a;
+		int b;
+		
+		
+		int[] array = new int[5];
+		
+		array[0]=1;
+		array[1]=2;
+		array[2]=3;
+		array[3]=4;
+		array[4]=5;
+		
+		
+		
+		System.out.print("첫번째 숫자를 입력해주세요");
+		a = Integer.parseInt(sc.nextLine());
+		System.out.print("두번째 숫자를 입력해주세요");
+		b = Integer.parseInt(sc.nextLine());
+
+		System.out.println("결과 값은 "+StringEx1(a,b));
+		
+		
+		
+		
+		System.out.println("두번째 결과 값은 "+StringEx2(array));
+		
+	}
+
+}
+
+
