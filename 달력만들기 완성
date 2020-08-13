@@ -1,0 +1,76 @@
+import java.util.ArrayList;
+import java.util.Calendar;
+
+public class Main3 {
+
+	public static void main(String[] args) {
+		/**
+		 * 1. 이번 달의 1일로 세팅 2. 이번달 1일의 요일을 가져옴 3. 해당하는 요일부터 일요일까지 거리를 구함 4. 저번달로 이동 5.
+		 * 저번달의 마지막 날이 몇일인지 구함 6. '3'번에 구한 값만큼 반복하면서 5번에서 구한 값을 -1 넣어줌
+		 * 
+		 * 7. 이번달로 이동 8. 이번달의 마지막 날이 몇일인지 구함 9. '8'번 번에 구한 값만큼 반복하면서 1부터 넣어줌
+		 * 
+		 * 10. 이번달의 마지막 날로 세팅 11. 이번달의 마지막 날 요일을 구함 12. 해당하는 요일부터 토요일까지 거리를 구함 13.
+		 * '12'번에 구한 값만큼 반복하면서 1부터 넣어줌
+		 * 
+		 **/
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.MONTH,0); //set 은 0부터 시작  add일때 (-)사용가능
+		cal.set(Calendar.DATE, 1);// 1. 이번 달의 1일로 세팅
+		int yoil = cal.get(Calendar.DAY_OF_WEEK); // 2. 이번달 1일의 요일을 가져옴  일요일 1 ~ 토 7  토요일 부터 일요일까지의 거리는 <해당요일 -1>
+		int dis = yoil - 1; // 3. 해당하는 요일부터 일요일까지의 거리를 구함					ex) 토요일이 7일 때 일요일까지의 거리는 6칸이다
+		cal.add(Calendar.MONTH, -1);// 4. 저번달로 이동
+		int max = cal.getActualMaximum(Calendar.DATE);// 5. 저번 달의 마지막 날이 몇일인지?
+
+		ArrayList<Integer> arr = new ArrayList<Integer>(); // 6. '3'번(해당하는 요일에서 일요일까지의 거리)에 구한 값만큼 반복하면서 5번에서 구한 값을 -1 넣어줌
+		for (int i = 0; i < dis; i++) {
+			arr.add(0, max);
+			max--;
+		}
+		//////////////////////////////////// 1 ~ 6
+		cal.add(Calendar.MONTH, 1); // 7. 이번 달로 이동 +1이나 1이나 같음
+		max = cal.getActualMaximum(Calendar.DATE); // 8. 이번 달의 마지막 날이 몇일인지?
+		for (int i = 0; i < max; i++) {
+			arr.add(i + 1);     }
+		
+		/////////////////////////////////// 7 ~ 9
+		cal.set(Calendar.DATE, max); // 10. 이번달의 마지막 날
+		yoil = cal.get(Calendar.DAY_OF_WEEK); // 11.이번달의 마지막 날 요일
+		dis = 7-yoil;// 12. 이번달의 마지막 날 요일에서 토요일까지의 거리
+		for (int i = 0; i < dis; i++) {
+			arr.add(i+1);//'12'번( 이번달의 마지막 날 요일에서 토요일까지의 거리)에 구한 값만큼 반복하면서 1부터 넣어줌
+			max++;
+		}
+		
+		for (int j = 0; j < arr.size(); j++) {
+			System.out.print(arr.get(j)+" ");
+		 if(j%7==6) {
+			 System.out.println();
+		 }
+		}
+		
+		//////////////////////////////////// 10 ~ 13
+		
+		
+
+//		int year = cal.get(Calendar.YEAR);
+//		int month = cal.get(Calendar.MONTH);  // 0 - 1월달, 11 - 12월달
+//		int day = cal.get(Calendar.DATE);
+//		int dow = cal.get(Calendar.DAY_OF_WEEK);  // 1 - 일요일, 2 - 월요일 7 - 토요일
+//		int max = cal.getActualMaximum(Calendar.DATE); 		
+//		
+//		cal.add(Calendar.MONTH, -1);  // 2020 07 12
+//		cal.add(Calendar.MONTH, 2);  // 2020 09 12
+//		
+//		cal.set(Calendar.YEAR, 2000); // 2000 09 12
+//		
+//		for (int i = 0; i < 20; i++) {
+//			if(i % 3 ==0 ) {
+//				System.out.println(i);
+//			}
+//		}
+//		
+//		System.out.println(year + " - " + (month+1) + " - "+day);
+	}
+
+}
