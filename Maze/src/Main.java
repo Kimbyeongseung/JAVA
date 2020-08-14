@@ -11,24 +11,36 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		String input = "";
 		while (true) {
-			System.out.println("ÇöÀç ÇÃ·¹ÀÌ¾î À§Ä¡ [" + posX + "][" + posY + "]");
-			System.out.println("¹¹ÇÒ·¡?");
-			System.out.println("1.  À§  2. ¾Æ·¡  3. ¿Þ  4. ¿À");
+			System.out.println("í˜„ìž¬ í”Œë ˆì´ì–´ ìœ„ì¹˜ [" + posX + "][" + posY + "]");
+			System.out.println("ë­í• ëž˜?");
+			System.out.println("1.  ìœ„  2. ì•„ëž˜  3. ì™¼  4. ì˜¤");
 			input = scan.nextLine();
 
 			if (input.equals("1")) {
 				if (posY > 0) {
 					posY--;
 				}else {
-					System.out.println("À§·Î ¸ø°£´Ù!!!!");
+					System.out.println("ìœ„ë¡œ ëª»ê°„ë‹¤!!!!");
 				}
 			}else if (input.equals("2")) {
 				if (posY < map[0].length-1) {
 					posY++;
 				}else {
-					System.out.println("¾Æ·¡·Î ¸ø°£´Ù!!!!");
+					System.out.println("ì•„ëž˜ë¡œ ëª»ê°„ë‹¤!!!!");
+				}
+				
+			}else if (input.equals("3")) {
+				if (posX < map.length-1) {
+					posX--;
+				}else {
+					System.out.println("ì™¼ìª½ìœ¼ë¡œ ëª»ê°„ë‹¤!!!!");
+				}
+			}else if (input.equals("3")) {
+				if (posX < map.length-1) {
+					posY++
 				}
 			}
+			
 		}
 
 	}
