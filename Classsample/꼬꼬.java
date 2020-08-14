@@ -5,7 +5,7 @@ class Main1 {
 	public static void main(String[] args){
 	Scanner sc = new Scanner(System.in);
 	ArrayList <String>strArr = new ArrayList<>();
-	ArrayList <String>iArr = new ArrayList<>();  //±¸¸§ '²¿²¿'
+	ArrayList <String>iArr = new ArrayList<>();  //Â±Â¸Â¸Â§ 'Â²Â¿Â²Â¿'
 	strArr.add("a");
 	strArr.add("e");
 	strArr.add("i");
