@@ -49,6 +49,8 @@ JAVAGOSU
   - 객체를 만들 필요없이 '클래스이름'으로 접근
   - static 속성에서 non-static으로는 접근 불가
 
-    ###default 같은 패키지 내에서 접근 
+    ###default 같은 패키지 내에서 접근
+    
     ###public 는 여기저기 다 접근 가능 
+    
     ###private 같은 클래스 내에서만 접근
