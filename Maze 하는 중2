@@ -1,0 +1,122 @@
+import java.util.Scanner;
+
+public class Main {
+	int[][] map = new int[5][4];
+	int posX, posY;
+	// 0: 우       1: 좌 우      2: 하 좌 우
+	// 3: 좌       4: 상 하   5: 상 하 우
+	// 6: 상 좌 우  7: 상 좌   8: 상 우, 9: 하
+	// 10 : 빈 방
+	int[][] room_type= {
+			{0, 1, 2, 1, 3},
+			{10, 10, 4, 10, 10},
+			{9, 10, 5, 3, 9},
+			{8, 1, 6, 1, 7},
+	};		
+	int pos_roomtype; // 현재의 룸 타임
+	
+	// 현재의 room type 리턴
+	public int get_roomtype(int posX, int posY) {
+		this.posX=posX; this.posY=posY;
+		return room_type[posX][posY];
+	}
+	
+	// 이동이 가능한지 체크하는 거
+	public boolean check_move(int room_type, int posX, int posY, String input) 
+	{
+		if (room_type==0) {//오
+			if (input.equals("1")) {return false;}
+			else if (input.equals("2")){return false;}
+			else if (input.equals("3")) {return false;}
+			else if (input.equals("4")) {this.posX = posX+1; this.pos_roomtype = room_type; return true;}
+		}
+		else if (room_type==1) {//왼 , 오 
+			if (input.equals("1")) {return false;}
+			else if (input.equals("2")){return false;}
+			else if (input.equals("3")) {this.posX = posX-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("4")) {this.posX = posX+1; this.pos_roomtype = room_type; return true;}
+		}
+		else if (room_type==2) {//하  좌  우
+			if (input.equals("1")) {return false;}
+			else if (input.equals("2")){this.posY = posY+1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("3")) {this.posX = posX-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("4")) {this.posX = posX+1; this.pos_roomtype = room_type; return true;}
+		}
+		else if (room_type==3) {//좌
+			if (input.equals("1")) {return false;}
+			else if (input.equals("2")){return false;}
+			else if (input.equals("3")) {this.posX = posX-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("4")) {return false;}
+		}
+		else if (room_type==4) {//상 하
+			if (input.equals("1")) {this.posY = posY-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("2")){this.posY = posY+1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("3")) {return false;}
+			else if (input.equals("4")) {return false;}
+		}
+		else if (room_type==5) {//상 하 우
+			if (input.equals("1")) {this.posY = posY-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("2")){this.posY = posY+1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("3")) {return false;}
+			else if (input.equals("4")) {this.posX = posX+1; this.pos_roomtype = room_type; return true;}
+		}
+		else if (room_type==6) {//상 좌 우
+			if (input.equals("1")) {this.posY = posY-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("2")){return false;}
+			else if (input.equals("3")) {this.posX = posX-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("4")) {this.posX = posX+1; this.pos_roomtype = room_type; return true;}
+		}
+		else if (room_type==7) { //상 좌
+			if (input.equals("1")) {this.posY = posY-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("2")){return false;}
+			else if (input.equals("3")) {this.posX = posX-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("4")) {return false;}
+		}
+		else if (room_type==8) { //상 우
+			if (input.equals("1")) {this.posY = posY-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("2")){return false;}
+			else if (input.equals("3")) {return false;}
+			else if (input.equals("4")) {this.posX = posX+1; this.pos_roomtype = room_type; return true;}
+		}
+		else if (room_type==9) { //하
+			if (input.equals("1")) {return false;}
+			else if (input.equals("2")){this.posY = posY-1; this.pos_roomtype = room_type; return true;}
+			else if (input.equals("3")) {return false;}
+			else if (input.equals("4")) {return false;}
+		}
+		else if (room_type==10) { // 빈 방
+			if (input.equals("1")) {return false;}
+			else if (input.equals("2")){return false;}
+			else if (input.equals("3")) {return false;}
+			else if (input.equals("4")) {return false;}
+		}
+		return false;
+	}
+	public static void main(String[] args) {
+		Main m = new Main();
+		m.posX = 2; m.posY=2; m.pos_roomtype=5;
+		
+//		map.length  // 5 // 가로의 길이
+//		map[0].length  //4 세로의 길이 
+		
+		Scanner scan = new Scanner(System.in);
+		String input = "";
+		boolean check = true;
+		
+		while (true) {
+			System.out.println("현재 플레이어 위치 [" + m.posX + "][" + m.posY + "]" + m.pos_roomtype);
+			System.out.println("어디로 움직이시겠습니까?");
+			System.out.println(" 1.상    2.하    3.좌    4.우 ");
+			input = scan.nextLine();
+	
+			m.pos_roomtype = m.get_roomtype(m.posX, m.posY);
+			check = m.check_move(m.pos_roomtype, m.posX, m.posY, input); // 각 방별 이동가능한 정보
+			System.out.print(m.posX);System.out.print(m.posY);
+			System.out.print(m.pos_roomtype);System.out.print(check+"\n");
+			
+			if (check== false) {
+				System.out.println("갈 수 없습니다");
+			}
+		} // while
+	} // void main
+} // class main
