@@ -1,0 +1,76 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main3 {
+
+	public static void main(String[] args) {
+		int score = 0;
+		String[] questionArr = new String[3];
+		String[] ch1 = new String[3];
+		String[] ch2 = new String[3];
+		String[] ch3 = new String[3];
+		String[] ch4 = new String[3];
+		String[] ans = new String[3];
+
+		questionArr[0] = "한국의 수도는?";
+		ch1[0] = "광주";
+		ch2[0] = "부산";
+		ch3[0] = "서울";
+		ch4[0] = "인천";
+		ans[0] = "3";
+
+		questionArr[1] = "1+1 = ?";
+		ch1[1] = "5";
+		ch2[1] = "2";
+		ch3[1] = "1";
+		ch4[1] = "100000";
+		ans[1] = "2";
+
+		questionArr[2] = "강의실 몇 층?";
+		ch1[2] = "20000";
+		ch2[2] = "1000";
+		ch3[2] = "1";
+		ch4[2] = "14";
+		ans[2] = "4";
+
+		int idx = new Random().nextInt(questionArr.length);
+
+		System.out.println(questionArr[idx]);
+		System.out.println(" 1) " + ch1[idx]);
+		System.out.println(" 2) " + ch2[idx]);
+		System.out.println(" 3) " + ch3[idx]);
+		System.out.println(" 4) " + ch4[idx]);
+		String an = ans[idx];
+
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine();
+		if (input.equals(an)) {
+			// 정답
+			score = score + 200;
+		} else {
+			// 오답
+		}
+
+		System.out.println("----------------");
+
+		idx = new Random().nextInt(questionArr.length);
+		System.out.println(questionArr[idx]);
+		System.out.println(" 1) " + ch1[idx]);
+		System.out.println(" 2) " + ch2[idx]);
+		System.out.println(" 3) " + ch3[idx]);
+		System.out.println(" 4) " + ch4[idx]);
+		an = ans[idx];
+
+		input = scan.nextLine();
+		if (input.equals(an)) {
+			// 정답
+			score = score + 200;
+		} else {
+			// 오답
+		}
+		
+		System.out.println(score + "점");
+		
+	}
+
+}
