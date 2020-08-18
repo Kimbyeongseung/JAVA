@@ -64,3 +64,4 @@ JAVAGOSU
     -QuizPack
     -상속
     -getter, setter
+https://www.youtube.com/watch?v=WAM-i4YNqVQ
