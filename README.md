@@ -66,4 +66,5 @@ JAVAGOSU
     -QuizPack
     -상속
     -getter, setter
+    -오버라이딩
 https://www.youtube.com/watch?v=WAM-i4YNqVQ
