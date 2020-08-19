@@ -68,3 +68,6 @@ JAVAGOSU
     -getter, setter
     -오버라이딩
 https://www.youtube.com/watch?v=WAM-i4YNqVQ
+
+    ### 20.08.19 (수)
+    -
