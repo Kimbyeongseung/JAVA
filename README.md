@@ -70,4 +70,4 @@ JAVAGOSU
 https://www.youtube.com/watch?v=WAM-i4YNqVQ
 
     ### 20.08.19 (수)
-    -
+    -인터페이스
